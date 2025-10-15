@@ -1,0 +1,121 @@
+---
+import Button from './Button.astro';
+---
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">
+        <a href="#home">Casa da Gi</a>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <Button href="#contato" variant="primary">Faça sua Reserva</Button>
+
+      <button class="mobile-menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(242, 242, 242, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    gap: 40px;
+  }
+
+  .logo a {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--vermelho-carmesim);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    color: var(--texto-escuro);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: var(--transition);
+  }
+
+  .nav-links a:hover {
+    color: var(--vermelho-carmesim);
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--vermelho-carmesim);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  @media (max-width: 1024px) {
+    .nav-links {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      height: 70px;
+    }
+
+    .logo a {
+      font-size: 24px;
+    }
+
+    .nav-links,
+    .nav :global(.button) {
+      display: none;
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+    }
+  }
+</style>

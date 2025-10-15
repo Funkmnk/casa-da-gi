@@ -1,0 +1,160 @@
+---
+import Button from './Button.astro';
+---
+
+<section id="sobre" class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-image">
+        <div class="image-shape">
+          <img src="/placeholder.svg?height=600&width=500" alt="Nossa cozinha" loading="lazy" />
+        </div>
+        <div class="floating-icon icon-1">
+          <img src="/placeholder.svg?height=80&width=80" alt="Chef" loading="lazy" />
+        </div>
+        <div class="floating-icon icon-2">
+          <img src="/placeholder.svg?height=80&width=80" alt="Utensílios" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="about-text">
+        <span class="subtitle">Nossa História</span>
+        <h2>Tradição e Sabor em Cada Prato</h2>
+        <p>
+          A Casa da Gi nasceu do sonho de compartilhar o verdadeiro sabor da comida caseira. 
+          Com mais de 15 anos de experiência, nossa chef Gi traz receitas tradicionais que 
+          passaram por gerações, preparadas com amor e ingredientes selecionados.
+        </p>
+        <p>
+          Cada prato é uma celebração da culinária brasileira, onde o aconchego de casa 
+          encontra a excelência gastronômica. Venha fazer parte da nossa família e 
+          descobrir por que somos o restaurante favorito da região.
+        </p>
+        <Button variant="secondary" href="#galeria">Conheça Nossos Pratos</Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 100px 0;
+    background: var(--branco-nevoa);
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-image {
+    position: relative;
+  }
+
+  .image-shape {
+    position: relative;
+    border-radius: 48% 52% 57% 43% / 45% 48% 52% 55%;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(217, 41, 56, 0.2);
+    background: linear-gradient(135deg, var(--vermelho-carmesim), var(--vinho-tinto));
+    padding: 15px;
+  }
+
+  .image-shape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 48% 52% 57% 43% / 45% 48% 52% 55%;
+  }
+
+  .floating-icon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: var(--branco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .floating-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-1 {
+    top: 30px;
+    right: -20px;
+  }
+
+  .icon-2 {
+    bottom: 50px;
+    left: -30px;
+    animation-delay: 1.5s;
+  }
+
+  .about-text .subtitle {
+    display: inline-block;
+    color: var(--vermelho-carmesim);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+
+  .about-text h2 {
+    font-size: 46px;
+    font-weight: 800;
+    color: var(--texto-escuro);
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--texto-claro);
+    margin-bottom: 20px;
+  }
+
+  .about-text :global(.button) {
+    margin-top: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .about-text h2 {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about {
+      padding: 60px 0;
+    }
+
+    .about-text h2 {
+      font-size: 32px;
+    }
+
+    .floating-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .floating-icon img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+</style>

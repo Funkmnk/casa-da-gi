@@ -1,0 +1,61 @@
+---
+const { variant = 'primary', href, class: className = '' } = Astro.props;
+---
+
+{href ? (
+  <a href={href} class={`button button-${variant} ${className}`}>
+    <slot />
+  </a>
+) : (
+  <button class={`button button-${variant} ${className}`}>
+    <slot />
+  </button>
+)}
+
+<style>
+  .button {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+  }
+
+  .button-primary {
+    background: var(--vermelho-carmesim);
+    color: var(--branco);
+  }
+
+  .button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .button-secondary {
+    background: var(--ouro-mostarda);
+    color: var(--texto-escuro);
+  }
+
+  .button-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: var(--ambar);
+  }
+
+  .button-large {
+    padding: 18px 48px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 768px) {
+    .button {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+  }
+</style>
