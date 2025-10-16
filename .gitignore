@@ -6,6 +6,10 @@ node_modules/
 out/
 build/
 
+# astro
+.astro/
+dist/
+
 # misc
 .DS_Store
 *.log
