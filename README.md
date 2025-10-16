@@ -1,6 +1,6 @@
 # 🍽️ Casa da Gi - Restaurante
 
-Site institucional para o restaurante Casa da Gi, apresentando cardápio, galeria e sistema de reservas.
+Site institucional para o restaurante Casa da Gi, apresentando cardápio, galeria e reservas.
 
 ## 📋 Pré-requisitos
 
