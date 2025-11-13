@@ -1,25 +1,42 @@
 ---
 import Button from './Button.astro';
 ---
-<section>
+
+<section id="sobre" class="about">
+  <div class="container">
+
+    <div class="about-content">
+      
+      <div class="about-image">
+        <div class="image-shape">
+          <img src="./images/Buffet5.png" alt="Pratos da Casa da Gi" loading="lazy" />
+        </div>
+        
+        <div class="floating-icon icon-1">
+          <img src="../../public/images/20.png" alt="" />
+        </div>
+        <div class="floating-icon icon-2">
+          <img src="../../public/images/7.png" alt="" />
+        </div>
+      </div>
+
       <div class="about-text">
         <span class="subtitle">Nossa História</span>
         <h2>Tradição e Sabor em Cada Prato</h2>
         <p>
-          A Casa da Gi nasceu do sonho de compartilhar o verdadeiro sabor da comida caseira. 
-          Com mais de 15 anos de experiência, nossa chef Gi traz receitas tradicionais que 
+          A Casa da Gi nasceu do sonho de compartilhar o verdadeiro sabor da comida caseira.
+          Com mais de 15 anos de experiência, nossa chef Gi traz receitas tradicionais que
           passaram por gerações, preparadas com amor e ingredientes selecionados.
         </p>
         <p>
-          Cada prato é uma celebração da culinária brasileira, onde o aconchego de casa 
-          encontra a excelência gastronômica. Venha fazer parte da nossa família e 
+          Cada prato é uma celebração da culinária brasileira, onde o aconchego de casa
+          encontra a excelência gastronômica. Venha fazer parte da nossa família e
           descobrir por que somos o restaurante favorito da região.
         </p>
         <Button variant="secondary" href="#galeria">Conheça Nossos Pratos</Button>
       </div>
-    </div>
-  </div>
-</section>
+
+    </div> </div> </section>
 
 <style>
   .about {
@@ -65,11 +82,14 @@ import Button from './Button.astro';
     justify-content: center;
     box-shadow: var(--shadow-lg);
     animation: float 3s ease-in-out infinite;
+    overflow: hidden;
+    border: 4px solid var(--vermelho-carmesim);
   }
 
   .floating-icon img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
   }
 
   .icon-1 {
